@@ -1,0 +1,13 @@
+﻿{
+  "name": "AURVO ATELIER | Luxury Store",
+  "short_name": "AURVO",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait",
+  "description": "Exclusividad y alta costura en Lima.",
+  "icons": [
+    { "src": "https://cdn-icons-png.flaticon.com/512/1695/1695213.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

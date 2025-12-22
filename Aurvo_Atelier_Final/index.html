@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>AURVO ATELIER | Alta Costura Lima</title>
+    <meta name="description" content="Diseño original y lujo exclusivo en Comas, Lima. Visita nuestro atelier digital.">
+    <meta property="og:title" content="AURVO ATELIER | Official Store">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=600">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="loading">
+
+    <div id="cursor"></div>
+
+    <div id="loader">
+        <div class="loader-wrap">
+            <h1 class="logo-load">AURVO ATELIER</h1>
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/=Hola%20Aurvo%20Atelier,%20me%20gustaría%20solicitar%20una%20pieza%20exclusiva" class="whatsapp-btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="white" width="30" height="30"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217s.231.001.332.005c.109.004.258-.041.404.308.159.386.542 1.32.588 1.412.046.092.076.198.015.311-.06.113-.091.193-.181.297-.09.104-.181.233-.259.311-.087.087-.177.182-.076.354.101.173.449.741.964 1.201.662.591 1.221.777 1.394.864.174.088.275.073.376-.043.101-.116.433-.504.55-.676.117-.172.231-.143.39-.084.159.059 1.012.477 1.186.564s.289.131.332.206c.044.075.044.435-.101.84z"/></svg>
+    </a>
+
+    <nav id="nav">
+        <div class="nav-container">
+            <div class="nav-toggle" onclick="ui.sidebar('menu-side')"><span></span></div>
+            <div class="logo" onclick="location.reload()">AURVO ATELIER</div>
+            <div class="nav-actions">
+                <span class="action-item" onclick="ui.sidebar('cart-side')">BAG <b id="cart-q">0</b></span>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="menu-side" class="sidebar left">
+        <div class="side-head"><h3>MENU</h3><span onclick="ui.closeAll()">✕</span></div>
+        <div class="side-links">
+            <a href="#shop" onclick="ui.closeAll()">COLECCIÓN</a>
+            <a href="#atelier" onclick="ui.closeAll()">ATELIER</a>
+            <a href="#contact" onclick="ui.closeAll()">CONTACTO</a>
+        </div>
+    </aside>
+
+    <aside id="cart-side" class="sidebar right">
+        <div class="side-head"><h3>BOLSA</h3><span onclick="ui.closeAll()">✕</span></div>
+        <div id="cart-list" class="side-content"></div>
+        <div class="side-foot">
+            <div class="row"><span>TOTAL:</span><span id="cart-total">S/ 0.00</span></div>
+            <button class="btn-gold" onclick="ui.checkout()">FINALIZAR COMPRA</button>
+        </div>
+    </aside>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="video-container">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=2070" class="hero-img">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-info">
+                <p class="reveal">HAUTE COUTURE 2025</p>
+                <h1 class="reveal delay-1">GOLDEN<br>LEGACY</h1>
+                <button class="btn-white reveal delay-2" onclick="ui.scroll('shop')">EXPLORAR</button>
+            </div>
+        </section>
+
+        <section id="shop" class="section">
+            <div class="section-title reveal">
+                <h2>THE COLLECTION</h2>
+                <div class="tabs">
+                    <button class="active" onclick="shop.filter('all', this)">TODO</button>
+                    <button onclick="shop.filter('mujer', this)">MUJER</button>
+                    <button onclick="shop.filter('hombre', this)">HOMBRE</button>
+                </div>
+            </div>
+            <div id="product-grid" class="grid"></div>
+        </section>
+
+        <section id="atelier" class="atelier-editorial">
+            <div class="editorial-box reveal">
+                <h2>ATELIER LIMA</h2>
+                <p>Nuestra visión se forja en la unión del arte clásico y la modernidad. Cada diseño de AURVO ATELIER es una oda a la sofisticación individual.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-wrap">
+            <div class="col">
+                <h4>NEWSLETTER</h4>
+                <form action="https://formsubmit.co/morilloisrael33@gmail.com" method="POST">
+                    <input type="email" name="email" placeholder="TU E-MAIL" required>
+                    <button type="submit">OK</button>
+                </form>
+            </div>
+            <div class="col">
+                <h4>REDES</h4>
+                <p>Instagram / TikTok / Pinterest</p>
+            </div>
+        </div>
+        <div class="copyright">© 2025 AURVO ATELIER. LIMA, PERÚ.</div>
+    </footer>
+
+    <div id="modal-p" class="modal">
+        <div class="modal-box">
+            <span class="close" onclick="ui.closeModal()">✕</span>
+            <div class="modal-flex">
+                <div class="m-img"><img id="m-img" src=""></div>
+                <div class="m-info">
+                    <h2 id="m-name">PRODUCTO</h2>
+                    <p id="m-price" class="gold-p"></p>
+                    <div class="sizes-wrap">
+                        <span>TALLA:</span>
+                        <div class="sizes">
+                            <button onclick="shop.setSize('S', this)">S</button>
+                            <button onclick="shop.setSize('M', this)">M</button>
+                            <button onclick="shop.setSize('L', this)">L</button>
+                        </div>
+                    </div>
+                    <button class="btn-black" onclick="shop.add()">AÑADIR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-c" class="modal">
+        <div class="modal-box small">
+            <span class="close" onclick="ui.closeModal()">✕</span>
+            <div class="form-wrap">
+                <h2>DATOS DE ENVÍO</h2>
+                <form action="https://formsubmit.co/morilloisrael33@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="NUEVO PEDIDO - AURVO">
+                    <input type="hidden" name="DETALLES_PEDIDO" id="order-details">
+                    <input type="hidden" name="MONTO_TOTAL" id="order-monto">
+                    <input type="text" name="Nombre" placeholder="Nombre completo" required>
+                    <input type="text" name="Telefono" placeholder="WhatsApp / Celular" required>
+                    <input type="text" name="Direccion" placeholder="Dirección en Lima" required>
+                    <button type="submit" class="btn-gold">CONFIRMAR PEDIDO</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, name: "GOLDEN GOWN", price: 2100, cat: "mujer", img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800" },
+            { id: 2, name: "ABRIGO ITALIANO", price: 1400, cat: "hombre", img: "https://images.unsplash.com/photo-1593032465175-d59456909a7b?q=80&w=800" },
+            { id: 3, name: "BLAZER TERCIOPELO", price: 1800, cat: "hombre", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800" },
+            { id: 4, name: "VESTIDO SILK NOIR", price: 1500, cat: "mujer", img: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=800" },
+            { id: 5, name: "TRENCH COAT PARIS", price: 1100, cat: "mujer", img: "https://images.unsplash.com/photo-1609152014367-156c01442075?q=80&w=800" },
+            { id: 6, name: "LENCERÍA GOLD", price: 650, cat: "mujer", img: "https://images.unsplash.com/photo-1616834066497-9e665ba0d37d?q=80&w=800" }
+        ];
+
+        const ui = {
+            scroll(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); },
+            sidebar(id) { this.closeAll(); document.getElementById(id).classList.add('active'); },
+            closeAll() { document.querySelectorAll('.sidebar').forEach(s => s.classList.remove('active')); },
+            closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.remove('active')); },
+            checkout() {
+                if(shop.cart.length === 0) return;
+                let details = ""; let total = 0;
+                shop.cart.forEach(i => { details += • \ (\) - S/ \\n; total += i.price; });
+                document.getElementById('order-details').value = details;
+                document.getElementById('order-monto').value = "S/ " + total;
+                this.closeAll();
+                document.getElementById('modal-c').classList.add('active');
+            }
+        };
+
+        const shop = {
+            cart: JSON.parse(localStorage.getItem('aurvo_cart')) || [],
+            current: null,
+            size: null,
+
+            init() {
+                this.renderGrid();
+                this.updateCart();
+                this.obs();
+                setTimeout(() => document.body.classList.remove('loading'), 1000);
+            },
+
+            obs() {
+                const observer = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); }), { threshold: 0.1 });
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            },
+
+            renderGrid(cat = 'all') {
+                const grid = document.getElementById('product-grid');
+                grid.innerHTML = '';
+                products.filter(p => cat === 'all' || p.cat === cat).forEach(p => {
+                    grid.innerHTML += 
+                        <div class="card reveal" onclick="shop.open(\)">
+                            <div class="img-container"><img src="\"></div>
+                            <div class="info"><h4>\</h4><p>S/ \</p></div>
+                        </div>
+                    ;
+                });
+                this.obs();
+            },
+
+            filter(cat, btn) {
+                document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                this.renderGrid(cat);
+            },
+
+            open(id) {
+                this.current = products.find(p => p.id === id);
+                this.size = null;
+                document.getElementById('m-img').src = this.current.img;
+                document.getElementById('m-name').innerText = this.current.name;
+                document.getElementById('m-price').innerText = 'S/ ' + this.current.price;
+                document.querySelectorAll('.sizes button').forEach(b => b.classList.remove('active'));
+                document.getElementById('modal-p').classList.add('active');
+            },
+
+            setSize(s, btn) {
+                this.size = s;
+                document.querySelectorAll('.sizes button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            },
+
+            add() {
+                if(!this.size) return alert('Selecciona una talla');
+                this.cart.push({ ...this.current, size: this.size, uid: Date.now() });
+                this.save();
+                ui.closeModal();
+                ui.sidebar('cart-side');
+            },
+
+            save() {
+                localStorage.setItem('aurvo_cart', JSON.stringify(this.cart));
+                this.updateCart();
+            },
+
+            updateCart() {
+                const list = document.getElementById('cart-list');
+                const totalDisplay = document.getElementById('cart-total');
+                const countQ = document.getElementById('cart-q');
+                countQ.innerText = this.cart.length;
+                let total = 0;
+                list.innerHTML = this.cart.length ? '' : '<p class="empty">Bolsa vacía.</p>';
+                this.cart.forEach(item => {
+                    total += item.price;
+                    list.innerHTML += 
+                        <div class="cart-item">
+                            <img src="\">
+                            <div class="i-info"><b>\</b><br><span>\ | S/ \</span></div>
+                            <span class="remove" onclick="shop.remove(\)">✕</span>
+                        </div>
+                    ;
+                });
+                totalDisplay.innerText = "S/ " + total + ".00";
+            },
+
+            remove(uid) {
+                this.cart = this.cart.filter(i => i.uid !== uid);
+                this.save();
+            }
+        };
+
+        shop.init();
+        if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+    </script>
+</body>
+</html>
